@@ -1,0 +1,12 @@
+{
+  "name": "ds-test-xx",
+  "version": "1.0.0",
+  "description": "Design system components",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT"
+}
