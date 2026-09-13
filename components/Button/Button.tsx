@@ -1,7 +1,7 @@
 import * as Ariakit from "@ariakit/react"
 import styles from "./Button.module.css"
 
-interface ButtonProps {
+export interface ButtonProps {
   children: React.ReactNode
   variant?: "primary" | "secondary" | "danger"
   disabled?: boolean
