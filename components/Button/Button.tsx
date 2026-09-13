@@ -1,24 +1,26 @@
-import React from 'react';
-import styles from './Button.module.css';
+import * as Ariakit from "@ariakit/react"
+import styles from "./Button.module.css"
 
-export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'primary' | 'secondary' | 'danger';
-  size?: 'sm' | 'md' | 'lg';
-  children: React.ReactNode;
+interface ButtonProps {
+  children: React.ReactNode
+  variant?: "primary" | "secondary" | "danger"
+  disabled?: boolean
+  onClick?: () => void
 }
 
-export const Button: React.FC<ButtonProps> = ({
-  variant = 'primary',
-  size = 'md',
+export function Button({
   children,
-  ...props
-}) => {
+  variant = "primary",
+  disabled,
+  onClick,
+}: ButtonProps) {
   return (
-    <button
-      className={`${styles.button} ${styles[variant]} ${styles[size]}`}
-      {...props}
+    <Ariakit.Button
+      className={`${styles.root} ${styles[variant]}`}
+      disabled={disabled}
+      onClick={onClick}
     >
       {children}
-    </button>
-  );
-};
+    </Ariakit.Button>
+  )
+}
