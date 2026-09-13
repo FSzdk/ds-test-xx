@@ -1,7 +1,7 @@
 import * as Ariakit from "@ariakit/react"
 import styles from "./TextField.module.css"
 
-interface TextFieldProps {
+export interface TextFieldProps {
   label: string
   required?: boolean
   placeholder?: string
