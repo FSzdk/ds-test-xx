@@ -1,12 +1,21 @@
 /* Design Tokens */
 :root {
-  /* Colors */
+  /* Colors — brand/status */
   --color-primary: #007bff;
+  --color-primary-hover: #0069d9;
   --color-secondary: #6c757d;
+  --color-secondary-hover: #5a6268;
   --color-success: #28a745;
   --color-danger: #dc3545;
+  --color-danger-hover: #c82333;
   --color-warning: #ffc107;
   --color-info: #17a2b8;
+
+  /* Colors — neutral/text */
+  --color-text: #212529;
+  --color-text-muted: #6c757d;
+  --color-text-on-primary: #ffffff;
+  --color-border: #ced4da;
   
   /* Typography */
   --font-family-base: "Space Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
