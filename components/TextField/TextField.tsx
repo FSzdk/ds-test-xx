@@ -1,40 +1,25 @@
-import React from 'react';
-import styles from './TextField.module.css';
+import * as Ariakit from "@ariakit/react"
+import styles from "./TextField.module.css"
 
-export interface TextFieldProps extends React.InputHTMLAttributes<HTMLInputElement> {
-  label?: string;
-  error?: boolean;
-  helperText?: string;
-  fullWidth?: boolean;
+interface TextFieldProps {
+  label: string
+  required?: boolean
+  placeholder?: string
 }
 
-export const TextField: React.FC<TextFieldProps> = ({
-  label,
-  error = false,
-  helperText,
-  fullWidth = false,
-  id,
-  ...props
-}) => {
-  const fieldId = id || `textfield-${Math.random().toString(36).substr(2, 9)}`;
-
+export function TextField({ label, required, placeholder }: TextFieldProps) {
   return (
-    <div className={`${styles.container} ${fullWidth ? styles.fullWidth : ''}`}>
-      {label && (
-        <label htmlFor={fieldId} className={styles.label}>
-          {label}
-        </label>
-      )}
-      <input
-        id={fieldId}
-        className={`${styles.input} ${error ? styles.error : ''}`}
-        {...props}
+    <div className={styles.root}>
+      <label className={styles.label}>
+        {label}
+        {required && <span className={styles.requiredMark}> *</span>}
+      </label>
+      <Ariakit.Focusable
+        as="input"
+        className={styles.input}
+        placeholder={placeholder}
+        required={required}
       />
-      {helperText && (
-        <span className={`${styles.helperText} ${error ? styles.errorText : ''}`}>
-          {helperText}
-        </span>
-      )}
     </div>
-  );
-};
+  )
+}
