@@ -15,10 +15,8 @@ export function TextField({ label, required, placeholder }: TextFieldProps) {
         {required && <span className={styles.requiredMark}> *</span>}
       </label>
       <Ariakit.Focusable
-        as="input"
+        render={<input placeholder={placeholder} required={required} />}
         className={styles.input}
-        placeholder={placeholder}
-        required={required}
       />
     </div>
   )
